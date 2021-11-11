@@ -43,7 +43,7 @@ Dev d’outils pour l’automatisation de certaines taches
 
 
 
-Rapport Stage de Fin d’études	3
+# Rapport Stage de Fin d’études	3
 Introduction	3
 Lyxor et le monde de l’asset management	4
 Le monde de l’asset management	5
