@@ -1,13 +1,129 @@
-- 👋 Hi, I’m @gogoguinaly
-- 👀 I’m interested in ...
-- 🌱 I’m currently learning ...
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
+## Tour d’horizon de l’AM aujourd’hui
 
-<!---
-gogoguinaly/gogoguinaly is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+Depuis la crise financière de 2008 la gestion d'actifs connaît un engouement, ce qui s’est traduit Depuis par une hausse annuelle des encours de 8% et ce n'est pas l'afflux conséquent de Liquidité sur les marchés lié à la crise sanitaire qui inversera cette tendance.  
+L’AUM Global dans le monde a ainsi dépassé le seuil fatidique des 100 trillions de dollars et est constitué de 59% d’acteurs institutionnel et 41% de particulier qui investissent notamment à travers des ETF. Dans la sphère des sociétés de gestion on distingue des mastodontes tels que black rock ou Amundi mais aussi une multitude de d’acteurs de plus petites tailles.
+Le contexte de taux bas met sous pression les rendements obligataires ce qui pénalise les gérants d'actifs notamment lorsque les clients sont des institutionnels car ils admettent des contraintes réglementaires plus importantes. C'est pourquoi Les investissements alternatifs émergent dans la gamme des produits proposés par les sociétés de gestion. 
+Malgré la croissance globale des AUM La compression des frais de gestion est palpable. En effet au cours des 5 dernières années les revenus par parts de fonds n'ont pas augmenté quand les frais de gestions ont nettement diminué, et c'est en particulier vrai pour les produits gestion active et les produits spécialisé de gestion active qui représentent 50% des encours globaux (cf graphique).
+(illustration)
+
+Conseil du boss de  BCG AM : il serait sage de faire du contrat cyclique et d’investir aujourd’hui dans les valeurs à fort potentiel de croissance. L’érosion des fees va persister en particulier avec un ralentissement dans la hausse des marchés.
+
+#Lyxor et le desk du stage 
+
+# La société de gestion
+Lyxor Asset Management est une société de gestion fondé en 1998 par la Société Générale. Ce spécialiste de la gestion d’actifs Européen admet 191,6 milliards d’encours sous gestion AUM fin Août 2021 dont 98,5 milliards investis en ETF.
+Puisqu’il s’agit d’une filiale Société Générale lorsque les gérants ont besoin de produits financiers proposés par les banques de financement et d’investissement, SGCIB est naturellement un acteur privilégié.
+Après plus de 20 ans d’existence, La société a été rachetée par à Amundi qui attiré par l'attractivité de Lyxor va ingérer la plupart des fonds afin de consolider son statut de premier gérant d'actifs européens, cette vente a eu lieu pour 825 millions d’euros.
+Les fonds restants migrent vers SG29 Haussmann qui est une société de gestion de portefeuille dédiée principalement à la clientèle privée de Société Générale Private Banking France.
+L’entité Lyxor est donc amenée à disparaître. De son côté le groupe de SG présente de nombreuses filiales mais son activité principale s'inscrit dans le cadre des grandes banques françaises (BNP, CA et BPCE) à savoir des activités de banque de détails avec un important réseau d’agence et de marché avec une branche financement et investissement (bfi). Après avoir traversé les épisodes compliqués le groupe affiche cette année une solide santé financière.
+##Les   de fonds les plus représentés :
+
+Lyxor s’illustre notamment à travers sa gamme d’ETF (ou Exhange Traded Fund) ce sont des fonds dans l'objectif est de répliquer la performance d’un indice donné. Lyxor propose des fonds indiciels actions (ETF) actions et sectoriels. 
+La société de gestion propose des fonds Plus spécifiques comme des fonds actions ou obligataires. Mais propose également des investissements de type multi Asset où multi-gestion Ces stratégies utilisent l'ensemble des classes d'actifs 
+
+# Le service des investissements structurés/LDI : fonds avec des contraintes particulières
+
+Les missions qui m'ont été assignées concernent l'ensemble des fonds du périmètre des équipes investissement en structurés, stratégie overlay et LDI. On va voir à travers cette partie les enjeux de ces différents types d'investissement. Notons que ces fonds ont pour point commun un recours systématique à des produits dérivés.
+
+Tout d'abord quelques mots sur les produits structurés classiques que l'on retrouve dans les fonds dénommé fonds à formule. Ce sont des produits qui visent à participer à la performance d'un ou plusieurs actifs sous-jacents tout en bénéficiant d’une protection sur le capital. Les structurés sont des solutions attractives et sont sur mesure c'est qui leur permet d'être adapté à un profil risques rendement. 
+ 
+Pour comprendre prenons l'exemple d'un produit de type Equity Linked Note : 
+ZC T = 8 ans  Capital = 100  tx = 1,5% donc 88,7% à investir oblig ZC
+On peut donc investir 11,3 dans un call ATM l’option vaut 10 on pourra donc profiter d’une expo à la hausse de 11,3 / 10 = 113% Tout en proposant un capital garanti
+Ces produits OTC complexes ont été développés par les BFI les années 90 Il a donc été nécessaire de déterminer des modèles capables de Valoriser ces produits. J’ai pu aborder ces problématiques avec les gérants et je me suis également intéressée à la fiche technique de produits dit autocall Phoenix worst of. 
+# La gestion à coussin ou CPPI ( constant proportion portfolio insurance) :
+
+La technique de la gestion à coussin reprend l'esprit de l’investissement en produits structurés. On retrouve une exposition variable à différents actifs risqués et non risqués ainsi qu’une certaine une protection du capital. 
+Afin de protéger son capital le gérant va ajuster régulièrement l'exposition aux actifs risqués ainsi qu’aux actifs non risqué. La performance dépend donc la dynamique suivie par l’actif risqué qui est tributaire des marchés. Le gérant de portefeuille sera donc très regardant de son exposition et choisira de l’ajuster si par exemple il considère qu’elle dépasse un certain seuil. 
+Il devra prendre en compte les éventuels frais liés à cet ajustement qui seront imputables à sa performance. Ainsi que ce qu’on appelle le risque de Gap, ce qui correspond à variation brutale des marchés, ce qui ne garantit plus l’efficiente de la stratégie CPPI.
+L'équipe implémente également des stratégies de type TIPP (Time Invariant Portfolio Protection). Il s'agit d'appliquer le principe de l'assurance de portefeuille à proportion constante (CPPI), Mais en prenant comme valeur garantie le pourcentage de la plus haute valeur liquidative du fonds.
+LDI
+
+Les Stratégies LDI (Liabilties driven investement) sont des stratégies dont l'objectif est de générer suffisamment de performance à partir d'actifs pour pouvoir couvrir les passifs à venir.
+Les passifs en l'occurrence sont des plus futurs à décaisser cela peut par exemple correspondre à des retraites qu'il faudra payer dans le futur. Pour anticiper aujour'hui le provisionnement en actifs il va falloir actualiser les passifs par rapport au taux souverain ainsi que par rapport à l'inflation. Pour ainsi constituer un adossement en actif qui coïncide avec cet adossement passif, L'objectif étant de recherche et de la performance pour combler cette différence.
+Le bureau propose notamment une solution d’investissement multi-fonds modernisée, construite en architecture ouverte, pour une gestion efficiente de la performance et des coûts. Par sa construction, le véhicule dédié permet une gestion réactive des portefeuilles, une meilleure maîtrise des risques grâce à un pilotage global.
+
+# Overlay
+
+La gestion "overlay" consiste à appliquer une "seconde couche" de gestion dans la construction d’un portefeuille d’actions, dans le but d’optimiser son profil de rendement/risque. Deux méthodes sont envisageables : réduire le risque tout en essayant de ne pas trop dégrader la performance, ou au contraire maximiser le rendement tout en encadrant la prise de risque associée. La première méthode, consistant à gérer la couverture d’un portefeuille, est la plus répandue, car elle peut répondre aux besoins d’un grand nombre d’investisseurs.
+
+# Mise en Œuvre : Swap TRS
+
+Pour implémenter la plupart de ces stratégies avec produits dérivés la société de gestion fait appel à la salle des marchés de SGCIB grâce à un swap total return. C'est un contrat de gré à gré constitué d’une jambe taux et d’une jambe dépendant de la performance totale return d’un actif. Ce qui va permettre une réplication synthétique des produits dérivés. 
+Regarde bien entendu son exposition et adapte selon son appréciation en conséquence avec/par rapport à la stratégie établie à travers le prospectus.
+
+# Outils pour les choix stratégiques du gérant: BackTest sur stratégie optionnel 
+
+Je vais aborder la question des choix stratégiques à travers un projet sur lequel j’ai consacré beaucoup de temps, notamment au début de mon stage. C’est un projet qui a été implémenté par l’équipe de la recherche Quantitative et qui a pour objectif de répondre aux besoins des gérants en matière de back test sur la vente de Call. C’est un projet encapsulé en différentes classes et considère comme données celles fournie par une API (Application Programming Interface) développé par la société générale. 
+J'ai été chargé d'adapter ce projet pour qu'il puisse répondre aux besoins des gérants en créant de nouvelles fonctionnalités permettant notamment d'ajuster les différents paramètres du backtest et d’implémenter de nouvelles stratégies optionnelles. 
+# Description de ce projet : 
+
+Le Backtesting consiste à tester une stratégie de trading ou d’investissement sur des données historiques réelles. Cette technique permet de voir comment une stratégie s’est comporté par le passé et surtout d’en affiner les éléments tels que la couverture établie ou les signaux pris en compte. 
+Le BackTesting est une méthode également utilisé lors du développement d’une nouvelle stratégie l’intérêt étant de la tester à partir de données réelles afin de voir de quelle manière elle se serait comporté par rapport aux soubresauts du marché en fonction des paramètres choisit. Cela permet d’éviter de faire des tests grandeur nature et d’obtenir des résultats réalistes.
+Ainsi plus la base de données est importante plus on peut éprouver la stratégie et mettre à l'épreuve sa robustesse. 
+Le Backtesting n’a pas de caractère prédictif puisqu’il ne s’agit pas de mettre en œuvre un modèle mais de simuler une stratégie grâce à des données réelles l’approche est donc surtout statistique. 
+Il faut donc être vigilent aux données considérées qui peuvent tirer à leur(s) avantage(s) certaines stratégies. Et surtout il faut toujours avoir à l’esprit que le but est d’analyser le passé et que les performances passées ne préjugent en rien des performances futures.
+
+# Hypothèses et éléments considérés
+
+On va rappeler ici quelques notions clés considérées pour élaborer ce projet et obtenir des résultats les plus cohérents possible. Il s’agit notamment d’évoquer des hypothèses sur la construction du portefeuille et du modèle utilisé pour la Valorisation mais aussi quelques notions clés à prendre en compte pour élaborer ce Back Test. 
+Pour notre simulation considère un objet portefeuille qui cherche à modéliser le comportement d'un fonds. Ce dernier est constitué d'actifs risqués et non risqués, C'est quoi qui correspondra dans notre cas respectivement à des produits dérivés et du cash.
+Pour valoriser correctement nos actifs il convient de fixer un cadre en posant certaines hypothèses. Il y a absence d'opportunité d'arbitrage sur le marché c'est à dire qu'on est en mesure de déterminer un prix « juste ». On considère un marché parfait (en équilibre, compétitif, efficients et liquide) et surtout on considère un marché complet qui correspond à un marché idéal où il existe une seule et unique mesure de probabilité risque neutre.
+Ainsi sous cette probabilité le prix des produits dérivés et une martingale. Ainsi on peut répliquer n’importe quel instrument (dont on connaît le pay-off) par un certain poids d’un actif risqué et non risqué.
+Comme on l'abordera dans la partie suivante c'est le modèle de black-scholes qui a été choisi pour notre valorisation il est donc important de rappeler les hypothèses que ce dernier implique :
+-	la distribution des rendements des actifs financiers suit une loi normale et le prix des actifs suit une loi log-normale. 
+-	la volatilité et constante
+
+Ces hypothèses se révèlent fausses empiriquement comme la plupart des hypothèses relevant du cadre évoqué précédemment. C'est pourquoi elles sont énoncées ici, Pour prendre du recul sur les résultats obtenus.  
+Pour notre valorisation on va considérer dans nos données de marché une volatilité implicite qui correspond à une volatilité dite de Black-Scholes. On l’évoquera à la fin de ce rapport, que compte tenu des taux négatifs, pour certains produits de taux le marché va plutôt considérer des volatilités implicites selon le modèle de bachelier.
+À travers ces quelques éléments se rend bien compte que l’apport du théorique est fondamental pour un tel projet. L'implémentation de ce projet illustre bien à la fois par des résultats réalistes et par la cohérence des outils utilisés avec ce qui est déployé dans l'industrie que de tels projets quantitatifs présentent un réel apport à la gestion active.
+
+# Valorisation des actifs : le modèle choisi (BC) et la mise en œuvre technique (QuantLib)
+
+L’objectif est de tester des stratégies optionnelles sur une période donnée. Le Pricing de ces produits dérivés est donc au cœur de ce projet.
+# Le moteur utilisé : Black-Scholes
+
+On réalise un pricing statique de notre portefeuille le modèle de Black Scholes et ses formules fermés sont donc parfaitement adaptés à nos besoins. Les expressions analytiques pour le calcul des sensibilités seront également les bienvenues lors du calcul du delta.
+Pour valoriser nos actifs on utilise une librairie python libre d’accès : QuantLib. Cette dernière permet de réaliser des pricing de produits complexes. QuantLib Est très utilisé en finance quantitative et se présente comme un logiciel complet on la retrouve également ces méthodes sous C++ ou C#. On peut utiliser des modèles tels que ceux à volatilité local ou stochastique ainsi que diverses méthodes tel que Monte Carlo ou grâce aux EDP.
+
+ 
+Ce qui est fondamental c’est de récupérer les données de marché. Cette étape est réalisée grâce à la classe Data Loader dont la constitution sera détaillée un peu plus loin. La base de données correspond à une agrégation de données fournies par Bloomberg et Markit. On récupère notamment les prix spot correspondant aux indices ou les prix des options call et put disponibles sur le marché mais aussi la volatilité, les taux et dividendes implicités.
+Arrêtons-nous sur la volatilité implicite élément clé dans la valorisation d’options. On obtient des points de volatilité selon le strike et le tenor ainsi on peut tracer ce qu’on appelle une nappe de volatilité (surface 3D) correspondant à une vision du marché à moyen et long terme. Voici par exemple ce qu’on obtient Avec l'indice phare japonais le NIKKEI sur une période de10 ans 
+ 
+
+On utilise une base de données assez conséquente prenant comme référence les options d’achat et de vente listés dont on connaît la volatilité implicite. Pour chaque indice on dispose alors d’une gamme de tenor associé à un ensemble de strike. Néanmoins c’est compliqué en pratique de se restreindre uniquement à ces points de volatilité on va réaliser une interpolation.
+
+Pour arriver à nos fins nous allons interpeller des points de volatilité. On réalise une interpolation polynomiale grâce à une librairie du Quant Lib à laquelle on doit fournir la matrice correspondant à cette surface de volatilité. Et on procède de la même manière pour le taux de dividende et le taux sans risque. 
+Problème rencontré : la volatilité avec le ténor le plus court terme correspond à un tenor de 10 jours ce qui n’est pas réaliser quand on veut pricer une option à quelques jours seulement de son terme. 
+(partie à revoir)
+Malgré cette étape franchie nous rencontrons des difficultés avec la nappe de volatilité, Bien que les données soient disponibles on rencontre un problème de réalisme. En effet les données disponibles admettent pour plus petit ténor un ténor de 10 jours, ainsi que des strike compris entre 50% et 150% du prix spot. 
+-	Concernant les ténors au fur et à mesure de notre bac test on va être amené à valoriser des produits admettant des dates inférieures à 10 jours. Or malgré l'interpellation si le ténor est inférieur à 10 jours c'est bien cette dernière qui sera considéré. 
+-	Concernant les Strike problèmes si on s'intéresse a un prix drague par rapport à une période ou le marché est très faible avec maturité importante alors euh dans au fur et à mesure on ne retrouvera pas le Strike la valeur Strike correspondant.
+-	
+L'implémentation du pricer se présente de la façon suivante :
+(format spécial avec Latex)
+voici comment s'imbriquent les objets de la classe Quant Lib de manière très simplifié (pseudo code): 
+Date d’expiration = ql.Date(..) 
+Option = OptionEuropéenne( Payoff Option Vanille ( Option Call ou Put, Strike), Exercice de Type Européen( Date d’expiration))
+Volatilité  = Point précis issu de l’interpolation réalisé sur la nappe de vol
+Taux sans risques =  Traitement sur la terme structure
+Processus = Black Scholes ( Traitement des données( Prix Spot ),  Taux sans risques , volatilité ) 
+# Petite digression :
+De mon côté j'ai réalisé une librairie de pricing python permettant le valoriser des produits dérivés. L'idée était d'avoir un outil indépendant me permettant de valoriser des options et des stratégies optionnelles. Il est également possible de tracer le graphe du payoff en fonction du prix ainsi que de déterminer les sensibilités en traçant les graphes associés 
+La librairie permet d'implémenter des modèles tels que celui de black-scholes mais aussi des modèles à volatilité locale où stochastique, en utilisant des méthodes de pricing tel que Monte Carlo ou les méthodes faisant directement appel aux EDP. Dans le code on peut y voir apparaître les expressions de certains modèles ou les formules fermées de black-scholes mais aussi les méthodes de la librairie QuantLib (dont je ne m’étais jamais servi auparavant). 
+Cette classe de pricing est notamment capable de donner le prix d'options vanilles, d'options barrière Ou encore 2 stratégies optionnelles telles que le pour spread ou le put spread ou le strangle. Elle a donc été utile tout au long de ce stage.
+
+# Architecture du projet (pour montrer l’apport purement technique de ce dernier)
+
+Ce projet s’articule en 3 classes et un fichier principal qui appelle les différentes méthodes permettant de lancer des back test de stratégies optionnels. 
+C’est un projet est assez élaboré d’un point de vu programmation dont la bonne compréhension a été essentielle, pour pouvoir étoffer le projet délivré par la recherche. On va ici examiner les différentes classes en s’arrêtant notamment sur les méthodes assurant la bonne implémentation du back Test.
+
+
+
+
+
+# __________ SAUVERGARDE RAPPORT ______
+
 
 
 
@@ -43,7 +159,7 @@ Dev d’outils pour l’automatisation de certaines taches
 
 
 
-# Rapport Stage de Fin d’études	3
+Rapport Stage de Fin d’études	3
 Introduction	3
 Lyxor et le monde de l’asset management	4
 Le monde de l’asset management	5
@@ -51,57 +167,56 @@ La place de l’AM en finance de marché : (le type de métier	5
 Les différents acteurs et notions clés	6
 Le distributeur :	6
 Centralisateur	6
-Droits d'entrée / sortie	9
+Conservateur	6
+Dépositaire	7
 Les investisseurs	7
 Les Styles de Gestion	7
 Structures juridiques en AM	8
 Notions clé :	8
+L’AUM	8
+Le Collat	8
+Droits d'entrée / sortie	9
 Le rôle du gérant et ses interactions avec les différents services	9
 Tour d’horizon de l’AM aujourd’hui	9
-Blabla (éléments à placer dans le rapport):	Error! Bookmark not defined.
 Lyxor et le desk du stage	10
 La société de gestion	10
 Les types de fonds les plus représentés :	11
 Le service des investissements structurés/LDI : fonds avec des contraintes particulières	11
-TIPP, CPI	Error! Bookmark not defined.
+La gestion à coussin ou CPPI ( constant proportion portfolio insurance) :	12
 LDI	12
 Overlay	12
 Mise en Œuvre : Swap TRS	13
 Outils pour les choix stratégiques du gérant: BackTest sur stratégie optionnel	13
 Description de ce projet :	13
-Objets pour illustrer/représenter le comportement du fond : portefeuille (AOA), risky asset, NAV	14
+Hypothèses et éléments considérés	14
 Valorisation des actifs : le modèle choisi (BC) et la mise en œuvre technique (QuantLib)	15
 Le moteur utilisé : Black-Scholes	15
-Architecture du projet (pour montrer l’apport purement technique de ce dernier)	18
-Classe Ptf :	18
+Architecture du projet (pour montrer l’apport purement technique de ce dernier)	17
+Classe Ptf :	17
 Classe Backtester :	18
-Classe Data Loader :	19
-Les différentes Stratégies optionnels des fonds TIPP / Overlay	19
-Put Spread:	19
+Classe Data Loader :	18
+Les différentes Stratégies optionnels pertinentes :	18
+Put Spread:	18
 Collar :	19
-Crash Put :	19
-Safe Perf	19
-Safe Invest	20
-EVO	20
-EVO WORLD	20
-CNP	20
-Analyse pour la suite	20
-Des outils pour le suivi mensuel/quotidien des fonds	21
-Stress Test d’un portefeuille d’options (% à la vol et au spot)	21
+Des outils pour le suivi mensuel/quotidien des fonds	19
+Stress Test d’un portefeuille d’options (% à la vol et au spot)	20
 Attribution de performance	22
 Intro sur l’attrib de perf en AM	22
-Présentation des objectifs finaux avec captures d’écrans	24
+Présentation des objectifs finaux	23
 Problèmes rencontrés	25
 Calcul de la performance :	26
 Analyser :	29
 Analyse et Affichage Graphiques	30
 Outils pour suivi court et moyen terme	30
+Pricer SWAP IRS :	30
 SWAP INFLA : Attribution de performance Swap Inflation	30
-Attribution de performance concernant les swaps d’inflation	33
-Description des produits :	33
-Valorisation (lien avec les cours sur les modèles de taux)	33
-SWAP DE TAUX (IRS)	33
+# ____________ REDONDANT :	32
+Valorisation (lien avec les cours sur les modèles de taux)	32
+# ____________	33
+Projets présentés qui ont suscité mon attention :	33
 Pricer de swaption :	33
+Réseau de Neurone : stratégie long/short.	33
+Conclusion :	33
 
 
 
@@ -214,7 +329,6 @@ Le collateral désigne un actif qui est déposé par la contrepartie débitrice 
 Droits d'entrée / sortie
 Montant qu'il faut acquitter en souscrivant ou rachetant une part d'OPCVM. Cette commission peut être nulle, fixe ou dégressive. Elle est fixée par rapport à la valeur liquidative (VL). Peut également être appelé Commissions de souscription ou de rachat.
 
-
 Le rôle du gérant et ses interactions avec les différents services
 
 Comme on l'a vu il existe une pléthore de styles de gestion ainsi que de types de fonds nous nous concentrerons ici plutôt sur le rôle du gérant de structurés Afin de décrire au mieux l'activité qui est tenu ici au sein du bureau structure et gestion et overlay.  Le point commun entre les différents fonds de l'équipe et vraiment l'utilisation de dérivés et une approche plutôt quantitative avec Une gestion active qui vise soit à garantir un objectif de performance fixés via une stratégie systématique où à garantir une protection du capital.
@@ -314,8 +428,8 @@ Ce qui est fondamental c’est de récupérer les données de marché. Cette ét
 Arrêtons-nous sur la volatilité implicite élément clé dans la valorisation d’options. On obtient des points de volatilité selon le strike et le tenor ainsi on peut tracer ce qu’on appelle une nappe de volatilité (surface 3D) correspondant à une vision du marché à moyen et long terme. Voici par exemple ce qu’on obtient Avec l'indice phare japonais le NIKKEI sur une période de10 ans 
  
 
-Pour obtenir une valeur de vol sur toutes les dates nous intéressants dans ce back-test il faut réaliser une interpolation
-Pour valoriser correctement nos options on a besoin de plus de données que la base de données n’en contient, En effet on va avoir besoin de ténors ou de Strike précis que la base te donner ne contient pas forcément. La principale raison à cela et qu'on considère des données de marché sur option listées donc naturellement nous sommes limités. 
+On utilise une base de données assez conséquente prenant comme référence les options d’achat et de vente listés dont on connaît la volatilité implicite. Pour chaque indice on dispose alors d’une gamme de tenor associé à un ensemble de strike. Néanmoins c’est compliqué en pratique de se restreindre uniquement à ces points de volatilité on va réaliser une interpolation.
+
 Pour arriver à nos fins nous allons interpeller des points de volatilité. On réalise une interpolation polynomiale grâce à une librairie du Quant Lib à laquelle on doit fournir la matrice correspondant à cette surface de volatilité. Et on procède de la même manière pour le taux de dividende et le taux sans risque. 
 Problème rencontré : la volatilité avec le ténor le plus court terme correspond à un tenor de 10 jours ce qui n’est pas réaliser quand on veut pricer une option à quelques jours seulement de son terme. 
 
@@ -339,7 +453,7 @@ Cette classe de pricing est notamment capable de donner le prix d'options vanill
 Architecture du projet (pour montrer l’apport purement technique de ce dernier)
 
 Ce projet s’articule en 3 classes et un fichier principal qui appelle les différentes méthodes permettant de lancer des back test de stratégies optionnels. 
-C’est un projet est assez élaboré d’un point de vu programmation dont la bonne compréhension a été essentiel, pour pouvoir étoffer le projet délivré par la recherche. On va ici examiner les différentes classes en s’arrêtant notamment sur les méthodes assurant la bonne implémentation du back Test.
+C’est un projet est assez élaboré d’un point de vu programmation dont la bonne compréhension a été essentielle, pour pouvoir étoffer le projet délivré par la recherche. On va ici examiner les différentes classes en s’arrêtant notamment sur les méthodes assurant la bonne implémentation du back Test.
 
 Classe Ptf :
 Attributs : Nav, actifs risqués (options principalement) et poids associé, cash
@@ -347,14 +461,15 @@ Méthodes : actualisation du portefeuille lors du rebalancement, permet de Mettr
 
 Classe Backtester :
 
+C’est dans cette classe qu’on retrouve les fonctions assurant le back test. Sur la période considéré on effectue une boucle sur les dates selon la fréquence de re-balancement en investissant à chaque fois une certaine fraction du notionnel. A chaque fréquence de NAV on effectue les étapes suivantes :
+	Valorisation du portefeuille pour faire évoluer sa valeur mark to market et ainsi sa performance relative
+	Calcul du Pnl pour les options expirés et actualisation des flux.
+
 Attributs : différents paramètres pour le pricing des options (objets QL notamment), objet de la classe portefeuille
 Méthodes :  permettant d’attribuer aux attribuer les valeurs correspondantes par rapport aux données
-Interpolation de la vol, rate et div
-Cœur de la l’apport de cet outil se fait à travers les méthodes :
-Backtest_xxx
-
 Classe Data Loader :
-Classe mettant en œuvre l’API développé par la société générale. 
+
+Classe mettant en œuvre l’API développé par la société générale. En entrée l’objet considère la date de début et de fin de la période
 Input : start date, end date etcc 
 Décrire ce qui est requêté depuis le fichier principal.
 Agrégation de données -> Bloom Markit Reuters tout ce qui est dispo finalement 
@@ -363,10 +478,7 @@ Redondant :
 Api sgm market permet de constituer une base de données qui sera alors la matière du BackTest
 Date de départ, indices (index : SPX, SX5E, …) , indice total return relatif, index de vol et de taux
 
-Les différentes Stratégies optionnels des fonds TIPP / Overlay
-
-Objectif : 
-Stratégies sur certain fonds testé ici. Mais seront également mise en avant par la suite pour d’autres projets.
+Les différentes Stratégies optionnels pertinentes :
 
 Paragraphes sur les fonds ciblés. Décrire les enjeux : couverture pour le fonds certes (convient clairement aux assureurs tenus à des contraintes réglementaires), mais capé donc on ne prend pas toute la hausse et on va voir que certaines stratégies sont parfois très coûteuses. 
 
@@ -379,45 +491,21 @@ Idée optimiser l’opération de couverture à la baisse
 
 Long put k2 et short put k1 
 ainsi on couvert contre une baisse comprise entre K2 et K1
+Call Spread :
+Long call K1 et short call K2 
+
 Collar :
 
-Crash Put :
+ 
+Long equity / ETF + Long Put + Short Call 
 
-Safe Perf
-Multiple de 5, floor 80% par rapport a la dernière NAV mensuelle.
-Fonds composé d’ETFs + EC + crashput
-SPX/SX5E/NKY
-Long put 1Y roll monthly K=90   12 put MAX
-Short Call 102 10D K=102            10 call MAX
-
-Safe Invest
-Multiple de 10, floor 80% par rapport à la dernière NAV mensuelle, sachant que tant que la NAV intra mois ne perd pas moins de 10% par rapport au mois dernier pas d’ajustement. 
-Fonds composé d’ETFs + EC + crashput
-SPX/SX5E/NKY
-Long put 1Y roll monthly K=90   12 put MAX
-Short Call 102 10D K=102            5 call MAX
-Déclanchement de la vente de call en fonction d’un signal de mean reverting (spot>moyenne mobile 10j) taille 20% avec delta hedging close to close.
-
-EVO 
-Multiple de 5, floor 80% par rapport à la dernière NAV mensuelle.
-Fonds composé Swap d’indexation (SX5T) (2%) + d’ETFs(96%)  + crashput
-Vol target réalisé 20j à max 25%
-
-EVO WORLD
-Multiple de 5, floor 80% par rapport a la dernière NAV mensuelle.
-Fonds composé Swap d’indexation (MSDEWIN “net return“) (73%) + d’ETFs  (26%) + crashput
-Vol target réalisé 20j à max 20%
-
-CNP
-basket d’ETF sur SPX, SX5E, NKY et Emergent  et strat overlay (put spread) sur SPX surtout et SX5E maturité (celle des produits listés)  généralement trimestrielle 
-
-
-Analyse pour la suite
-Stratégie du fonds Safe performer, analyse et Piste d’amélioration
-CNP : basket d’ETF sur SPX, SX5E, NKY et Emergent et strat overlay (put spread) sur SPX surtout et SX5E maturité (celle des produits listés)  généralement trimestrielle
+Le choix des strikes :
+-quantitatif 
+-économique
+ATM, OTM ? La question du prix et de ce qui est souhaité
 Des outils pour le suivi mensuel/quotidien des fonds
 
-Pour de ces fonds le gérant de portefeuille ne peux pas se fier uniquement à l'évolution de sa valeur liquidative c'est pourquoi il a besoin d'affiner et d'y voir un peu plus clair il a déjà à sa disposition une feuille de gestion qui récapitule tout ce qui est en portefeuille. 
+Pour le suivi de ces fonds le gérant de portefeuille ne peux pas se fier uniquement à l'évolution de sa valeur liquidative c'est pourquoi il a besoin d'affiner et d'y voir un peu plus clair il a déjà à sa disposition une feuille de gestion qui récapitule tout ce qui est en portefeuille. 
 Eclairer grâce à certains outils. 
 à côté de ça le gérant a besoin d'information au quotidien puisqu'il est chargé de gérer le fonds 
 L'ensemble des fonds du périmètre de l'équipe Font l'objet d'un régulièrement l’objet d’un rapport assez complet, Tout dépend de ce qui est fixé par le prospectus. Ce dernier s'adresse aux clients puisque nous avons affaire à des clients institutionnels ces derniers sont regardants de l'évolution des fonds dans lesquels ils ont investi. Ainsi sont abordés les thèmes suivants : la performance réalisée, le comportement de la stratégie et sa possible évolution Ainsi que l'avenir du Fonds. Ces rapports Sont souvent mensuels.
@@ -431,6 +519,9 @@ C'est une stratégie de couverture mise en place sur le fond safe performer qui 
 Cette stratégie est mise en œuvre par la salle de marché qui nous envoie plusieurs fois par mois un rapport Décrivant les options de la stratégie (Long put et Short Call) Complété de leur prix et de leur sensibilité à la date du jour de l’envoie de ce rapport.
 L'objectif est de répondre à l'obligation de double valorisation du gérant d'actifs Et d'y voir un peu plus clair en cas de choc sur certains paramètres. Enfin Il est pertinent de présenter ce résultat lors du rapport mensuel au client concernant le fond.
 
+
+
+
 Notre Stress Test Consiste à réaliser des chocs successifs sur la valeur du prix du sous-jacent ainsi que sur la volatilité considérée. On détermine par rapport aux différents paramètres de marché la valeur et ainsi on obtient 
 	On considère le prix spot de la date de reporting, on constitue une gamme de prix compris entre 50% et 150% de ce prix.
 	On Importe les données de marché grâce à notre API. 
@@ -439,6 +530,7 @@ Notre Stress Test Consiste à réaliser des chocs successifs sur la valeur du pr
 Puis on procède de la même manière avec la volatilité implicite des options ainsi on obtient deux graphiques correspondant aux stress test sur le prix et sur la volatilité.
 Dans le même temps on détermine les sensibilités des options que l'on agrège également afin d'obtenir des graphiques correspondant à l'évolution des Grecs selon les chocs successifs. 
 Prise en main de l’outil : 
+ 
 J'ai constitué une interface graphique avant de faciliter la prise en main de cet outil par le gérant il a alors 2 possibilités soit d’indiquer L'emplacement du fichier Excel Contenant le portefeuille d'options. où s'il souhaite se simplifier la vie il peut renseigner  le le dossier dans sa boîte mail qui contient c'est différent portefeuille d'options en pièce jointe de mail envoyé par SG CIB. Considérant qu'on a un portefeuille par indice (SPX, SX5E et NIKKEI). Il aura alors le choix de réaliser un stress test par 1X ou de agrégée le portefeuille et de regarder le rendu en euro 
 
 Attribution de performance
@@ -469,15 +561,24 @@ Performance globale := la performance comptable (variation de la valeur liquidat
 Nous verrons par la suite qu’une distinction par briques d’actifs est établit de manière discrétionnaire par le gérant. L’idée est de regrouper les titres et d’établir une classification par exemple selon le type d’actif, le secteur géographique ou encore le secteur d’activité. 
 (Exemple : un investissement en ETF sur le Nikkei vs sa protection avec des produits dérivés) 
 
-Présentation des objectifs finaux avec captures d’écrans
+Présentation des objectifs finaux 
 
 L’objectif est donc de rendre une attribution de performance selon les briques d’actifs et par rapport à une période souhaité, en proposant au gérant un outil simple d’utilisation. 
+
+
+
+
+
+
+
+
+
 L’approche est double avec d’une part un calcul systématique par fonds, admettons tous les mois. Ainsi on sera en mesure de proposer un fichier à jour par fonds, complété d’un reporting par mail contenant les informations clés et éventuellement un graphique de la performance décomposée par briques. 
 Et d’autre part l’outil sera à disposition grâce à un interface graphique et permettra à quiconque souhaite s’enquérir de la performance d’un des fonds du périmètre de requêter et d’obtenir un résultat selon la période voulue.
 La classification des actifs par briques est à la discrétion du gérant. En intégrant aux données les trades consécutifs on peut voir apparaître de nouveaux instruments comme par exemple des obligations indexées sur l’inflation ou des ETF sur les marchés émergents. D’une part cet instrument sera intégré à la liste des actifs qui composent le fonds et d’autre part le gérant devra l’assigner à l’une des briques d’actifs. [Alors dès que cet outil sera rencontré de nouveau il sera automatiquement identifié]
-L’idée est de fournir au gérant un outil permettant d’obtenir une attribution de performance selon la période de son choix. Tout en sortant un livrable de manière mensuelle qui sera historisé et fera l’objet d’un reporting par mail. Tout cela de manière automatisée et de manière la plus complète possible à travers un fichier Excel comportant les différentes données nécessaires à cette attribution de performance.
 
  
+L’idée est de fournir au gérant un outil permettant d’obtenir une attribution de performance selon la période de son choix. Tout en sortant un livrable de manière mensuelle qui sera historisé et fera l’objet d’un reporting par mail. Tout cela de manière automatisée et de manière la plus complète possible à travers un fichier Excel comportant les différentes données nécessaires à cette attribution de performance.
 
 Problèmes rencontrés
 
@@ -586,7 +687,10 @@ A ce stade on est mesure de dire que le projet à réussi à répondre aux objec
 Outils pour suivi court et moyen terme 
 
 Présentation d’un des projets de la recherche Quant. Pricer de Swap de Taux Classique
+Pricer SWAP IRS : 
 
+Un swap de taux simple est un contrat de gré à gré pour lequel deux contreparties s’échangent des flux d’intérets basé sur un taux fixe ou un taux variable par rapport à un nominal donné. 
+Reprendre exactement notes cahier
 SWAP INFLA : Attribution de performance Swap Inflation
 
 Contexte: Fonds SPP1 pour les retraites par capitalisation de Engie, donc adossement passif et actifs
@@ -594,9 +698,14 @@ Actifs pour générer de la performance et ainsi être raccord au passif
 
 Ici par attribution de performance : on veut d’une part comparer la performance de nos actifs avec un benchmark mais également être en mesure d’expliquer la performance de nos actifs ou d’une poche d’actifs par rapport à un attribut en particulier (par exemple : mouvement de taux d’inflation ou d’intérets (pour les OATI) ) 
 
-Benchmark en question : il s’agit d’un ensemble de swap infla et d’obligations avec des maturités différentes suffisamments représentatifs(/ves) des produits détenus dans le fond. 
+Benchmark en question : il s’agit d’un ensemble de swap infla et d’obligations avec des maturités différentes suffisamments représentatifs(/ves) des produits détenus dans le fond. Réplique la duration des produits du fond. 
 Benchmark
 Type	Maturity	Position J	Coupon	Base_CPI
+BOND	25/05/2040	 €                          155,000,000.00 	0.5	-1
+BOND	25/05/2052	 €                          143,000,000.00 	0.75	-1
+CPI_SWAP	15/06/2022	 €                             28,949,566.84 	1.932443	-1
+CPI_SWAP	15/06/2023	 €                             25,004,759.92 	1.506795	-1
+CPI_SWAP	15/06/2024	 €                             21,855,516.93 	1.45894	-1
 
 
 Swap Inflation :
@@ -635,9 +744,7 @@ Présence d’une obligation non indexée sur l’inflation dans le bench pour t
 
 Nouvelle version de l’outil à venir. Il faudra renseigner la base CPI correspond à la valeur de l’indice le jour où on a traité
 
-Attribution de performance concernant les swaps d’inflation
-
-Description des produits :
+# ____________ REDONDANT :
 
 Valorisation (lien avec les cours sur les modèles de taux)
 Point sur l’attrib de perf :
@@ -646,17 +753,15 @@ Explications diverses : les actifs dans lesquels on a investit on performé, SR,
 Attrib % à un benchmark intéressant mais ici on a se concentre sur ce qui passe de manière intrinsèque au fond et plus précisément pour chaque actifs le composant (risque idiosyncratique pour chaque asset)
 
 Mise en œuvre (…)
-
-SWAP DE TAUX (IRS)
-
+# ____________
 
 
-
-
-Apport personnel :
-
-Autre Projet :
+Projets présentés qui ont suscité mon attention :
 Pricer de swaption : 
+
+Swaption produit abordé lors du cours de modèle de taux. 
+Rappel Définition 
+Il s’agit donc option sur swap, le produit en question est un Strangle avec strike compris entre +2.5 bp et -2.5 bp. 
 Quelques notes sur le produit d’abord puis sur le modèle. 
 
 Réseau de Neurone : stratégie long/short.
