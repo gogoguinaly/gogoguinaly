@@ -119,10 +119,7 @@ Ce projet s’articule en 3 classes et un fichier principal qui appelle les diff
 C’est un projet est assez élaboré d’un point de vu programmation dont la bonne compréhension a été essentielle, pour pouvoir étoffer le projet délivré par la recherche. On va ici examiner les différentes classes en s’arrêtant notamment sur les méthodes assurant la bonne implémentation du back Test.
 
 
-
-
-
-# __________ SAUVERGARDE RAPPORT ______
+# --- Sauvergarde rapport : 
 
 
 
@@ -540,30 +537,33 @@ Intro sur l’attrib de perf en AM
 
 L'attribution de performance 
 
-La demande croissante d’informations de la part de la clientèle pousse les gérant d’actifs à dépasser la simple mesure de performance. Un moyen efficace d’éclaircir la gestion opérée est l’attribution de performance qui regroupe l'ensemble des techniques utilisées par les gérants de portefeuilles pour expliquer la performance 
-Le but étant d’apporter une valeur ajoutée à la gestion et d’être en phase avec la demande en informations croissante de la clientèle (institutionnelle en particulier). 
-L’attribution de performance va nous permettre d’analyser et d’interpréter les résultats, en particulier quand ils sont le fruit d’une gestion active.   (redondant avec la suite ?)
-Il s’agit de savoir exactement à quel attribut du fonds on peut allouer de la performance (positive ou négative) et en quelle proportion. 
-Cette dernière sera utile aussi bien pour le gérant qui est chargé de la stratégie que pour les clients et le management dans un soucis de reporting. 
+La demande croissante d’informations de la part de la clientèle pousse les gérant d’actifs à aller plus loin que la simple mesure de performance. Un moyen efficace d’éclaircir la gestion est l’attribution de performance qui regroupe l'ensemble des techniques utilisées par les gérants de portefeuilles pour expliquer la performance 
+
+L’attribution de performance va nous permettre d’apporter une valeur ajoutée à la gestion car on va pouvoir analyser et d’interpréter les résultats. Ce qui sera particulièrement bienvenu dans le cadre d’une gestion active et sera donc utile pour répondre au besoin en information du client (en particulier les institutionnels), mais aussi celui du management. 
+
+Il s’agit de savoir exactement à quel attribut du fonds on peut allouer de la performance qu’elle soit positive ou négative et en quelle proportion. Pour affiner on va donc s’intéresser aux actifs qui composent le fonds, aux différents flux de capitaux (souscription/rachat ou ordres passés), aux dividendes ainsi qu’aux différents frais imputés. 
+
+
+
 #	#	#
 L’objet de cet article est de reprendre la méthodologie de calcul de l’attribution de performance, aujourd’hui largement utilisée par les institutions financières et les gestionnaires, et de mettre l’accent sur certaines de ses limites. Au moyen d’un exemple simple, nous montrerons comment cette méthode peut pénaliser certains choix rationnels effectués par un gérant. Afin de remédier à ce paradoxe apparent, nous proposons une extension originale de la méthode d’attribution de performance que nous avons nommée « l’écart de contribution au risque ».
+
+et analyser au mieux la performance globale du fonds. 
+
 #	#	#
 
-L’objectif est donc de regarder la valeur des actifs qui composent le fonds, les différents flux de capitaux (souscription/rachat ou ordres passés), les dividendes et les différents frais imputés. 
-
-Ainsi obtenir une ventilation bien distincte à travers ces différents éléments et analyser au mieux la performance globale du fonds. 
-Cela permet de prendre du recul sur les différentes performances des fonds et de pouvoir distinguer par exemple une variation liée à une souscription importante d’une variation qui correspond à un effet de marché. 
+On va alors obtenir une ventilation bien distincte à travers ces différents éléments cela va nous permettre du prendre du recul la performance d’un fond. Ainsi le gérant sera par exemple en mesure de distinguer une si la forte augmentation des AUM d’un fond est lié à un effet de marché ou une souscription importante.
+  
 La décomposition selon les différentes classes d’actifs permet au gérant de savoir quels sont les actifs qui sont moteur de performance ce qui est particulièrement intéressant quand le fonds admet une gestion active, en effet le gérant pourra adapter la stratégie en conséquence 
 
 On se sert donc ici de données du passé il s’agit d’une analyste dite ex-poste. Les périodes les plus regardés sont celles qui commencent le dernier jour du mois précédent celui en cours (MtD) ou du dernier jour de l’année précédant l’année courante (YtD). 
 Notons pour la suite que :
 Performance globale := la performance comptable (variation de la valeur liquidative du fonds).
-Nous verrons par la suite qu’une distinction par briques d’actifs est établit de manière discrétionnaire par le gérant. L’idée est de regrouper les titres et d’établir une classification par exemple selon le type d’actif, le secteur géographique ou encore le secteur d’activité. 
-(Exemple : un investissement en ETF sur le Nikkei vs sa protection avec des produits dérivés) 
 
 Présentation des objectifs finaux 
 
-L’objectif est donc de rendre une attribution de performance selon les briques d’actifs et par rapport à une période souhaité, en proposant au gérant un outil simple d’utilisation. 
+Pour notre attribution de performance on va établir une distinction par briques d’actifs. L’idée est de classifier les différents titres en fonction de critères établit tel que le secteur géographique, le type d’actif ou encore le secteur d’activité. 
+Le souhait de ce projet est de délivrer un outil simple d’utilisation pour le gérant avec une interface dite « plug and play » afin fournir des résultats sans afficher la moindre ligne de code ni même la moindre formule. 
 
 
 
@@ -573,44 +573,50 @@ L’objectif est donc de rendre une attribution de performance selon les briques
 
 
 
-L’approche est double avec d’une part un calcul systématique par fonds, admettons tous les mois. Ainsi on sera en mesure de proposer un fichier à jour par fonds, complété d’un reporting par mail contenant les informations clés et éventuellement un graphique de la performance décomposée par briques. 
+
+L’objectif est double avec d’une part un calcul systématique par fonds et d’autre part un outils flexible permettant de requêter sur une période donnée. 
+On pourrait se dire que tous les mois l’outil serait sollicité pour mettre à jour l’attribution de performance sur chaque fonds ce qui serait complété d’un reporting par mail et éventuellement un graphique de la performance décomposée par briques. 
 Et d’autre part l’outil sera à disposition grâce à un interface graphique et permettra à quiconque souhaite s’enquérir de la performance d’un des fonds du périmètre de requêter et d’obtenir un résultat selon la période voulue.
-La classification des actifs par briques est à la discrétion du gérant. En intégrant aux données les trades consécutifs on peut voir apparaître de nouveaux instruments comme par exemple des obligations indexées sur l’inflation ou des ETF sur les marchés émergents. D’une part cet instrument sera intégré à la liste des actifs qui composent le fonds et d’autre part le gérant devra l’assigner à l’une des briques d’actifs. [Alors dès que cet outil sera rencontré de nouveau il sera automatiquement identifié]
+La classification des actifs par briques est à la discrétion du gérant. En intégrant aux données les trades consécutifs on peut voir apparaître de nouveaux instruments comme par exemple des obligations indexées sur l’inflation ou des ETF sur les marchés émergents. 
+Ces nouveaux instruments seront intégrés à la liste des actifs qui composent le fonds qui sera ainsi mise à jour au fur et à mesure et par cette occasion l’utilisateur pourra renseigner le nom de la brique correspondante (selon son avis éclairé).
 
  
-L’idée est de fournir au gérant un outil permettant d’obtenir une attribution de performance selon la période de son choix. Tout en sortant un livrable de manière mensuelle qui sera historisé et fera l’objet d’un reporting par mail. Tout cela de manière automatisée et de manière la plus complète possible à travers un fichier Excel comportant les différentes données nécessaires à cette attribution de performance.
-
+Ci-dessus la première façon d’interagir avec l’outil. 
 Problèmes rencontrés
 
+# ----
+On va le voir par la suite le choix des méthodes de calcul choisi est bien arrêté le problème n’est donc pas la.
+# ----
+Ce projet dont les objectifs sont bien établis s’est avéré bien plus complexe que je ne le pensais. Les méthodes de calcul ainsi que leurs implémentations n’était pas un problème, les eccueils rencontrés étaient plutôt d’ordre technique (gestion des différentes bases de données notamment) et du fait que beaucoup de fonds présentent des spécificités. 
+La gestion des données : 
 En l’état les membres de l’équipe ont à disposition des informations éparses, cela est lié au nombre important d’outils utilisés. Il a donc fallu d’abord identifier les données nécessaires ainsi que les différents moyens pour y accéder. 
-Bien entendu les gérants disposent d’une feuille de gestion par fonds. Assez complète mais non exploitable.
-
-On distingue par exemple un logiciel chargé de passer les ordres : sophis.
-Ainsi qu’un logiciel permettant de référencer les différents actifs présents en portefeuille de manière comptable.
-+ SGSS ?
+On distingue par exemple un logiciel chargé de passer les ordres sophis, ainsi qu’un second permettant de référencer les différents actifs présents en portefeuille de manière comptable.
+On dispose d’un moyen d’accéder à ces informations sur les fonds. Le problème c’est que cela restreint à certaines requêtes peu modulables. L’enjeu est. Pbm màj. En somme pbm de gestion de base de données. 
+Les gérants disposent d’une feuille de gestion par fonds qui est très synthétique, mais non exploitable pour notre  puisque le fichier n’est pas assez stable.
 Concernant les infos de type (…) l’équipe support de Lxyor fut chargé de créer des requêtes Excel afin de permettre un accès direct au gérant selon leurs besoins (exemple : récupérer les différents trades, dividendes.  sur une période donnée).
 
 Il a donc fallu donc identifier ces requêtes et développer un outil capable d’articuler d’une part la feuille excel avec des requêtes s’exécutant automatiquement et un corps en python permettant un calcul efficient et bien plus rapide que ce qui aurait pu être mis en place avec excel. 
-
+Purement technique :
 Pour cela j’ai fait le choix d’utiliser une librairie python xlwings opérante en tant qu’Add in pour joindre python à Excel ainsi que quelques fonctions VBA pour rafraîchir les fonctions sollicités et formatter les feuilles (point qui a son importance pour les gérants/pour le reporting).
-% qui a été fondamentale dans ce projet %
 
 Par ailleurs cette librairie présente des fonctions capricieuses. Ces dernières se heurtant à Excel, logiciel pour lequel les bugs sont courants avec un nombre important de données. J’ai alors réussi à créer sous python des fonctions qui s’exécutent parfaitement et mettent ainsi en œuvre xlwings.
 
+Il y a donc eu un gros travail préalable reposant sur les bases de données, ce qui a permis d’être vigilent par la suite puisque même si les outils sont efficaces la bases de données peut présenter lacunes. 
+Spécificité des différents fonds
+L’une des principales entraves à l’implémentation de ce projet fut la diversité des fonds du périmètre, ces derniers pouvant présenter des produits dérivés bien spécifiques ou des fréquences de NAV différentes. Prenons par exemple le cas des futures établit sur certains pour mettre en place une couverture. Il a fallut réaliser un travail spécifique pour obtenir une valeur mark to market et ainsi une valorisation de ces produits puisque contrairement aux swaps ces informations sont disséminés.
+% qui a été fondamentale dans ce projet %
+
+# ---- 
 Petite digression : mon niveau en programmation a augmenté
 Première impression : ce qu’on tente d’implémenter ne va jamais marcher
 Ce qui est sur le papier est trop loin de ce qui se produit réellement 
 Constat final : Cela fonctionne et même parfaitement ce qui permet donc d’aller un peu plus loin que ce qui était souhaité et d’utiliser ces connaissances pour la suite. 
-
-Il y a donc eu un gros travail préalable reposant sur les bases de données, ce qui a permis d’être vigilent par la suite puisque même si les outils sont efficaces la bases de données peut présenter lacunes. 
-
-L’une des principales entraves à l’implémentation de ce projet fut la diversité des fonds du périmètre, ces derniers pouvant présenter des produits dérivés bien spécifiques ou des fréquences de NAV différentes. Prenons par exemple le cas des futures établit sur certains pour mettre en place une couverture. Il a fallut réaliser un travail spécifique pour obtenir une valeur mark to market et ainsi une valorisation de ces produits puisque contrairement aux swaps ces informations sont disséminés.
+# ---- 
 
 Calcul de la performance : 
 
 Dans cette partie / Ici on met l’accent sur les méthodes de calcul utilisées pour nos rapports de performances. Pour développer ce projet nous avons choisi quelques méthodes que nous verrons ici dans la pratique. L’objectif est notamment de fournir une performance par éléments ainsi qu’une contribution à la performance par actif et ce de manière quotidienne et cumulé.
 Notons que l'ensemble des éléments disponibles ce projet sont rapportés en euros ainsi nous n'avons pas à nous préoccuper de l'effet de base de certaines devises sur les investissements réalisés. Pour les quelques données Chiffrées qui font exception nous utilisons un taux FX pour aboutir simplement à une Unification en euros.
- 
 Perf vs Rendement 
 Il est important de garder à l’esprit que performance et rendement sont des notions qui semblent très proches mais sont pourtant bien distinctes. 
 	Le rendement décrit le revenu distribué aux détenteurs d’un actif financier ou d’une part de fond. Cela provient généralement du détachement de dividendes ou de coupons dans le cas des obligations. Ces flux sont appelés les Cashflow. 
@@ -618,8 +624,7 @@ Il est important de garder à l’esprit que performance et rendement sont des n
 On distingue également le rendement lié à la plus-value réalisé suite à la vente (resp achat) d’un titre acheté moins (resp plus) cher par le passé. Dans ce cas de figure l’investisseur ne possède plus le titre en question. 
 
 La performance elle correspond à l’évolution de la valeur d’un actif ou d’une valeur liquidative dans le cas d’un fond. Cette notion correspond à une valorisation du capital. La performance va donc s’apprécier ou se déprécier sous un effet de marché, de souscription et de rachat ou encore de revenus distribués. 
-Ainsi Performance totale=(Position finale - position initiale + rendement) / position initiale x100
-
+Ainsi Performance totale = (Position finale - position initiale + rendement) / position initiale x100
 Calcul de quelques Eléments clés pour le calcul de la performance :
 Voici quelques éléments de calcul concernant des facteurs simples directement impliqué dans l'attribution de performance.
 Valeur liquidative exacte = encours sous gestion / nombre de parts 
@@ -639,7 +644,7 @@ Cette formule notamment utilisé pour le calcul de la Performance globale. Preno
 Ainsi sur cette période de 3 mois le fonds accuse une performance de x%. (calcul ..)
 Par ailleurs on rappelle que la performance globale (performance comptable) décrit la performance de la valeur liquidative du Fonds.
 
-Perf Cumulé , perf total Return, performance multi période:
+Perf Cumulé, perf total Return, performance multi période:
 Prenons notre cas d’étude pour lequel on calcul une performance selon chaque fréquence de NAV à partir de ces différentes performances on veut être en mesure de déterminer la performance sur une plus longue période on parle alors de performance cumulée. 
 Il faut composer avec ces performances puisque si on parle en journalier, le fruit de la 1 ère perf sera réinvestis de même pour les suivantes. 
 Il faut donc composer avec ces performances, prenons le cas où on calcule de manière journalière alors le fruit de la performance de la première journée sera réinvesti et ainsi de suite pour les journées suivantes. C’est pourquoi on utilise une formule qui considère une combinaison géométrique des sous périodes. 
@@ -676,8 +681,11 @@ L'attribution de performance qui a lieu d'expliquer a posteriori les performance
 
 
 Analyse et Affichage Graphiques
+Voici quelques exemples des résultats 
 
-Perf total return !
+
+Fond gestion overlay
+
 
 Suite 
 
@@ -689,13 +697,40 @@ Outils pour suivi court et moyen terme
 Présentation d’un des projets de la recherche Quant. Pricer de Swap de Taux Classique
 Pricer SWAP IRS : 
 
-Un swap de taux simple est un contrat de gré à gré pour lequel deux contreparties s’échangent des flux d’intérets basé sur un taux fixe ou un taux variable par rapport à un nominal donné. 
-Reprendre exactement notes cahier
+Un swap de taux simple est un contrat de gré à gré pour lequel deux contreparties s’échangent des flux basé sur un des taux d’intérêt fixe et variable et cela par rapport à un nominal donné. Ce contrat permet aux contreparties d’échanger sur des flux futurs. Les premiers seront variables et en général basés sur un taux de référence ainsi qu’un spread définit à l’initiation, les seconds types de flux seront fixés et connu avant le début du contrat. L’intérêt de se type de contrat est soit de se couvrir contre une variation des taux ou alors au contraire de s’y exposer on dispose uniquement de taux fixe. Dans le cas de Lyxor lorsque les clients sont des institutionnels l’une des approches privilégiées est la couverte face à une variation des taux. On entrera alors dans un swap dit swpa receveur, sous entendu receveur de variable et payeur de taux fixe. 
+
+Relativement à un besoin de l’équipe qui utilise des swap de taux vanille sur certains des fonds gérés. J’ai réalisé un pricer de swap, dit IRS pour Interest Rate Swap, en python avec une interface graphique permettant d’afficher les flux à venir des différentes jambes. L’objectif pour les gérant avec cet outil est notamment d’avoir une bonne visibilité sur les échéances à venir sans à avoir à les redéterminer avec bloomberg à chaque fois. 
+ 
+Voici un aperçu dans l’interface proposé au gérant. 
+
+
+Pour valoriser un swap il faut comprendre ce qui compose les différentes jambes pour comprendre un peu mieux prenons un exemple préçis. 
+N = 100 M, T = 10 ans, fréquence = semi annuelle, taux fixe (taux swap) = 4%, indice de référence = EURIBOR 6mois.
+	Paiement jambe fixe : EURIBOR 6M * N * (EXACT / 360) 
+	Paiement jambe variable : r_k * N * (180/ 360) 
+Enfin pour obtenir le prix du swap par jambe il faut actualiser l’ensemble des flux futurs la date de la valorisation. 
+ Il nous faut donc comme données de marché d’une part concernant le taux d’actualisation (en composition dans notre cas) et les taux variables anticipés. 
+Dans les deux cas on travaille sur des dates précises qui ne correspondent pas forcément aux données de marchés, nous devons donc réaliser une interpolation (polynomiale pour avoir le plus de préçision possible). 
+Pour avoir une valeur correspondant aux taux variables dont la valeur n’est pas connue à l’avance on se sert des taux forward qui correspondent à une anticipation du marché de ces taux (obtenue grâce au marché des produits dérivés swap listé notamment). Et concernant les taux sans risques on considère dans notre exemple la courbe ESTER. 
+ 
 SWAP INFLA : Attribution de performance Swap Inflation
 
-Contexte: Fonds SPP1 pour les retraites par capitalisation de Engie, donc adossement passif et actifs
-Actifs pour générer de la performance et ainsi être raccord au passif 
+Dans le cadre des mandats LDI l’équipe est amené à traiter des problématiques d’inflations. On rappel que l’objectif est d’obtenir une performance avec des actifs permettant de couvrir un adossement au passsif, il faut donc également s’assurer que ce dernier ne sera mis à mal par une variation des taux d’inflation. 
+J’ai été mis dans la boucle mais je n’ai finalement pas été contributeur de ce projet. La recherche quantitative avait déjà presque fini ce projet quand il m’a été présenté et les gérants qui utilisent cet outil ont pu s’en servir directement. Toute fois je trouve que c’est un sujet très intéressant je vais donc le présenter ici. 
 
+Pour se couvrir d’une variation sur les taux les gérants utilisent des swaps d’inflation le pricinpe est le même qu’avec des swaps de taux vanille (échange de taux d’intérêts entre deux contreparties pour un notionnel et une maturité donnée) mais ici le taux considéré est lié au taux d’inflation. 
+On regarde le taux d’inflation de la zone européenne (CPTFMUI index) qui est très corrélé à celui de la France qui est représenté par l’index CPI (Consumer Price Index). 
+Regardons les flux d’un tel swap d’inflation en t crée en t = 0 
+Jambe variable : 
+	N *  (C_T)/(C_0)    		où C_T correspond à taux d’infla à la date de maturité (ie après le tenor)
+Jambe fixe :
+N*  (C_t)/(C_0)*〖(1+x)〗^(T-t)       où x correspond au taux auquel on rentre dans le swap 
+(ex swap infla 10ans swap rate = 1,49%)
+Ainsi pay-off d’un tel swap est le suivant: 
+	N/(C_0)    *( C_T – C_t *(1+x)^(T-t)  )
+
+Ce point est important puisque qu’une valorisation de ces produits sera effectuée. En données de marché la courbe d’inflation à l’instar de la courbe des taux il s’agit ici du taux d’inflation par rapport à différentes maturités.
+L’objectif est réaliser une attribution de performance sur les 
 Ici par attribution de performance : on veut d’une part comparer la performance de nos actifs avec un benchmark mais également être en mesure d’expliquer la performance de nos actifs ou d’une poche d’actifs par rapport à un attribut en particulier (par exemple : mouvement de taux d’inflation ou d’intérets (pour les OATI) ) 
 
 Benchmark en question : il s’agit d’un ensemble de swap infla et d’obligations avec des maturités différentes suffisamments représentatifs(/ves) des produits détenus dans le fond. Réplique la duration des produits du fond. 
@@ -708,30 +743,6 @@ CPI_SWAP	15/06/2023	 €                             25,004,759.92 	1.506795	-1
 CPI_SWAP	15/06/2024	 €                             21,855,516.93 	1.45894	-1
 
 
-Swap Inflation :
-Même principe que pour les swaps vanille (échange de taux d’intérêts entre deux contreparties pour un notionnel et une maturité donnée) mais ici on regarde le taux d’inflation. 
-En l’occurrence celui de la zone européenne CPTFMUI index
-Index CPI (Consumer Price Index) (Indice des prix à la consommation en France)
-Regardons les flux d’un tel swap d’inflation en t crée en 0 
-Patte var : 
-	N *  (C_T)/(C_0)    		où C_T correspond à taux d’infla à la date de maturité (ie après le tenor)
-Patte fixe :
-N*  (C_t)/(C_0)*〖(1+x)〗^(T-t)       où x correspond au taux auquel on rentre dans le swap 
-(ex swap infla 10ans swap rate = 1,49%)
-Ainsi pay-off d’un tel swap: 
-	N/(C_0)    *( C_T – C_t *(1+x)^(T-t)  )
-
-NB : on parle donc souvent en notionnel inflaté. Mais attention à bien distinguer les cas. 
-
-Petit point sur la courbe d’inflation : à l’instar de la courbe des taux  il s’agit ici du taux d’inflation par rapport à différentes maturités (attention on distinguera la courbe d’inflation qui tient compte des différentes dates de maturités et donc de différents tenors et celle qui regarde uniquement les différents tenors des swaps infla).
-On notera ici que la vision des marchés est que l’augmentation de l’inflation est transitoire et baissera l’année prochaine avant de remonter plutôt à long terme. (Bcp d’incertitudes à ce sujet bien sur)
-
-Attribution de perf : 
-Tenor	5	10	20	30	50			
-Bucket	 0-5 	 5-10 	 10-20 	 20-30 	30-50	50-1000	Total	Nav end date avec courbe start date
-Fund	€267,121	€100,876	€373,644	€2,480,807	€0	€0	€3,222,540	€517,091,919
-Benchmark	€150,991	€88,395	€243,660	€896,461	€2,399,537	€4,706	€3,783,812	€289,902,213
-Difference	€116,130	€12,481	€129,984	€1,584,346	-€2,399,537	-€4,706	-€561,271	 €                                                227,189,706.55 
 
 On va chercher à déterminer la valeur des actifs du fond puis du bench observé en expliquant les variations par les mouvement de la courbe d’infla. Puis on regarde la NAV à la fin avec la courbe d’infla du début.
 
@@ -741,24 +752,12 @@ On procède de la même manière pour les autres buckets et les actifs du bench 
 On remarque que les swaps d’infa avec un tenor < 30 ans contribuent à une performance positive quand ceux avec un tenor>30ans impute une performance négative
 
 Présence d’une obligation non indexée sur l’inflation dans le bench pour tenter d’expliquer la variation de NAV par rapport à ce qui est attendu. C’est expliqué notamment par la présence dans le fond d’une OATI qui admet un détachement de coupons. 
-
 Nouvelle version de l’outil à venir. Il faudra renseigner la base CPI correspond à la valeur de l’indice le jour où on a traité
-
-# ____________ REDONDANT :
-
-Valorisation (lien avec les cours sur les modèles de taux)
-Point sur l’attrib de perf :
-Objectif à partir d’une performance donnée d’un fond on veut être capable de l’expliquer sur une période donnée.
-Explications diverses : les actifs dans lesquels on a investit on performé, SR, actif fortement pondéré a énormément contribuer
-Attrib % à un benchmark intéressant mais ici on a se concentre sur ce qui passe de manière intrinsèque au fond et plus précisément pour chaque actifs le composant (risque idiosyncratique pour chaque asset)
-
-Mise en œuvre (…)
-# ____________
 
 
 Projets présentés qui ont suscité mon attention :
-Pricer de swaption : 
 
+Pricer de swaption : 
 Swaption produit abordé lors du cours de modèle de taux. 
 Rappel Définition 
 Il s’agit donc option sur swap, le produit en question est un Strangle avec strike compris entre +2.5 bp et -2.5 bp. 
@@ -767,9 +766,6 @@ Quelques notes sur le produit d’abord puis sur le modèle.
 Réseau de Neurone : stratégie long/short.
 Aucunement impliqué. Mais je l’évoque ici car le sujet me paraîtrait pertinente de plus j'ai travaillé sur cette thématique à travers les différentes matières que j'ai pu avoir l’année passée. 
 
-
-
-
 Conclusion : 
 
 Stage très très utile et prégnant pour la suite. 
@@ -777,10 +773,10 @@ J’ai bcp appris. Aussi bien sur le monde de l’AM. Le front office. Que sur l
 Réponds aux questions. Quid en pratique ? 
 La théorie aborder en cours en fondamental. Accroché aux idées et en l’occurrence elle persiste mais il faut être pragmatique et faire confiance aux différents collaborateur de Lyxor. 
 Parler de moi. Et de ce que ça a pu m’apporter 
-Qualités prégnantes : La rigueur (être rigoureux), précision (confiance en soi), pédagogie (clair dans ses explications)
+Qualités prégnantes : La rigueur / être rigoureux, précision (confiance en soi), pédagogie (clair dans ses explications)
 Et bien sûr : Esprit critique, prise de décision, créativité, Diligence, Esprit d’équipe
 Compétences techniques sont (dénuées de sens) beaucoup moins valorisés sans les compétences humaines (savoir être.
-
+Poste SG29
 En substance
 Ce n’est pas un sujet
 
